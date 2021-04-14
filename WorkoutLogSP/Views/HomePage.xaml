@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WorkoutLogSP.Views.HomePage"
+             NavigationPage.HasBackButton="False"
+             Title="Home Page"
+             BackgroundColor="Black">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to the Elite workout app, it does the following: &#10; &#10;* Track individual workouts&#10; &#10;* Send workouts to players and coaches&#10; &#10;* Keep track of your roster &#10; " FontSize="Large" TextColor="White" Margin="15,25,15,25"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

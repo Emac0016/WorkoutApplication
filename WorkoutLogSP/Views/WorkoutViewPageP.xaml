@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WorkoutLogSP.Views.WorkoutViewPageP"
+             BackgroundColor="Black"
+             NavigationPage.HasBackButton="True">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="spTop" Text="Sport: " FontSize="Large" FontAttributes="Bold" TextColor="White" TextDecorations="Underline"/>
+            <Label x:Name="Sport" Text="{Binding Sport}" TextColor="White"/>
+            <Label x:Name="tyTop" Text="Type: " FontSize="Large" FontAttributes="Bold" TextColor="White" TextDecorations="Underline"/>
+            <Label x:Name="Type" Text="{Binding Type}" TextColor="White"/>
+            <Label x:Name="deTop" Text="Description: " FontSize="Large" FontAttributes="Bold" TextColor="White" TextDecorations="Underline"/>
+            <Label x:Name="Desc" Text="{Binding Description}" LineBreakMode="WordWrap" TextColor="White"/>
+            <Label x:Name="timCr" Text="Created: " TextColor="White" FontSize="Medium" FontAttributes="Bold" TextDecorations="Underline"/>
+            <Label x:Name="timeCreated" Text="{Binding TimeCreated}" TextColor="Gray" FontSize="Small"/>
+            <Button x:Name="Del" Text="Delete" BackgroundColor="White" TextColor="Black" WidthRequest="115" Clicked="OnDeleteClicked" VerticalOptions="End"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

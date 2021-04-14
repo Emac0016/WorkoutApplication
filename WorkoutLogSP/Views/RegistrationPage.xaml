@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WorkoutLogSP.Views.RegistrationPage"
+             BackgroundColor="Black"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout x:Name="Entries" Orientation="Vertical" VerticalOptions="CenterAndExpand" Margin="25,0,25,0">
+            <Entry Placeholder="Email" BackgroundColor="White" x:Name="EmailEntry"/>
+            <Entry Placeholder="Password" BackgroundColor="White" x:Name="PasswordEntry"/>
+            <Label x:Name="PlayerCoachPrompt" Text="Are you a player or a coach: " TextColor="White"/>
+            <Frame BorderColor="White">
+                <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                    <Label x:Name="CoachesLabel" Text="Coach" BackgroundColor="White" HorizontalOptions="StartAndExpand"/>
+                    <CheckBox x:Name="CoachesBox" Color="Red" BackgroundColor="White" HorizontalOptions="StartAndExpand"/>
+                    <Label x:Name="PlayersLabel" Text="Player" BackgroundColor="White" HorizontalOptions="EndAndExpand"/>
+                    <CheckBox x:Name="PlayersBox" Color="Red" BackgroundColor="White" HorizontalOptions="EndAndExpand"/>
+                </StackLayout>
+            </Frame>
+            <Button Text="Register" BackgroundColor="White" TextColor="Black" WidthRequest="115" Clicked="RegisterClicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

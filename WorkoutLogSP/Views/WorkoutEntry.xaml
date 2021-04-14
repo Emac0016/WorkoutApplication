@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WorkoutLogSP.Views.WorkoutEntry"
+             NavigationPage.HasBackButton="False"
+             Title="Workout Entry Page"
+             BackgroundColor="Black">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout x:Name="Contents" VerticalOptions="Center">
+                <Label VerticalOptions="Center" FontAttributes="Bold" Text="Enter Workout Type:" TextColor="White"/>
+                <Picker x:Name="WorkType" VerticalOptions="Center" FontSize="Large" TextColor="Black" BackgroundColor="White">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Sport Specific</x:String>
+                            <x:String>Strength Related</x:String>
+                            <x:String>Conditioning</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <Label  VerticalOptions="Center" FontAttributes="Bold" Text="Workout Summary:" TextColor="White" />
+                <Editor x:Name="WorkSum" VerticalOptions="Center" BackgroundColor="White" Placeholder="Brief Summary of Workout..." HeightRequest="300" />
+                <CheckBox x:Name="sendToCoach" VerticalOptions="Center" HorizontalOptions="Start" BackgroundColor="White"/>
+            </StackLayout>
+            <StackLayout x:Name="EndContents" VerticalOptions="End">
+                <Button Text="Save" Clicked="OnSaveClicked" TextColor="Black" BackgroundColor="White" VerticalOptions="End"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

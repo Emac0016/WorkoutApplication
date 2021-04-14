@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WorkoutLogSP.Views.CoachTeamRegistration"
+             BackgroundColor="Black"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+            <Label x:Name="Greetings" Text="Welcome Coach" TextColor="White" FontSize="18"/>
+            <Label x:Name="ThankYou" Text="Thank you for registering. Please enter the information below." TextColor="White"/>
+            <Label x:Name="CoachName" Text="Name:" TextColor="White"/>
+            <Entry Placeholder="First Last" x:Name="Name" BackgroundColor="White"/>
+            <Label x:Name="TeamName" Text="Team Name:" TextColor="White"/>
+            <Entry Placeholder="Team Name" x:Name="TName" BackgroundColor="White"/>
+            <Label x:Name="SportType" Text="Select a sport: " TextColor="White"/>
+            <Picker x:Name="SportPick" FontSize="Large" TextColor="Black" BackgroundColor="White">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Men's Basketball</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <Button x:Name="TeamRegistrationButton" Text="Enter" TextColor="Black" BackgroundColor="White" WidthRequest="115" Clicked="TeamRegButton_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WorkoutLogSP.Views.CoachWorkoutEntry"
+             BackgroundColor="Black"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Workout Entry Page:" FontAttributes="Bold" TextColor ="White" FontSize="Large" VerticalOptions="Start" HorizontalOptions="CenterAndExpand"/>
+            <Label FontAttributes="Bold" Text="Select Workout Type:" TextColor="White"/>
+            <Picker x:Name="WorkType" FontSize="Large" TextColor="Black" BackgroundColor="White">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Sport Specific</x:String>
+                        <x:String>Strength Related</x:String>
+                        <x:String>Conditioning</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <Label FontAttributes="Bold" Text="Workout Description:" TextColor="White"/>
+            <Editor x:Name="WorkSum" BackgroundColor="White" Placeholder="Brief description of Workout..." HeightRequest="300"/>
+            <Button Text="Save" Clicked="OnSaveClicked" TextColor="Black" BackgroundColor="White"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
