@@ -1,0 +1,57 @@
+        private Button PlayerButton;
+        private Button CoachButton;
+        private Button LogOutButton;
+
+        public HomePage()
+        {
+
+            this.Title = "Home Page";
+            this.BackgroundColor = new Xamarin.Forms.Color(204, 0, 0);
+
+            StackLayout HomePageLayout = new StackLayout();
+
+            PlayerButton = new Button
+            {
+                Text = "Player",
+                HorizontalOptions = LayoutOptions.FillAndExpand,
+                Margin = new Thickness(20,20,20,20)
+            };
+            PlayerButton.Clicked += PlayerButton_Clicked;
+            HomePageLayout.Children.Add(PlayerButton);
+
+            CoachButton = new Button
+            {
+                Text = "Coach",
+                HorizontalOptions = LayoutOptions.FillAndExpand,
+                Margin = new Thickness(20, 20, 20, 20)
+            };
+            CoachButton.Clicked += CoachButton_Clicked;
+            HomePageLayout.Children.Add(CoachButton);
+
+            LogOutButton = new Button
+            {
+                Text = "Log Out",
+                HorizontalOptions = LayoutOptions.FillAndExpand,
+                Margin = new Thickness(20, 20, 20, 20)
+            };
+            LogOutButton.Clicked += LogOutButton_Clicked;
+            HomePageLayout.Children.Add(LogOutButton);
+
+            Content = HomePageLayout;
+
+        }
+
+        private async void LogOutButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new LoginPage());
+        }
+
+        private async void CoachButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new CoachesPage());
+        }
+
+        private async void PlayerButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new PlayerPage());
+        }

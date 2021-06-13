@@ -1,0 +1,43 @@
+ private Button WorkoutPageButton;
+        private Button HomePageButton;
+
+        public PlayerPage()
+        {
+            this.BackgroundColor = new Xamarin.Forms.Color(204, 0, 0);
+            this.Title = "Player Page";
+
+            StackLayout PlayerPageLayout = new StackLayout();
+
+            WorkoutPageButton = new Button()
+            {
+                Text = "Enter Workout",
+                Margin = new Thickness(20, 20, 20, 20),
+                HorizontalOptions = LayoutOptions.Fill,
+                VerticalOptions = LayoutOptions.Center
+            };
+            WorkoutPageButton.Clicked += WorkoutPageButton_Clicked;
+            PlayerPageLayout.Children.Add(WorkoutPageButton);
+
+
+            HomePageButton = new Button()
+            {
+                Text = "Home Page",
+                Margin = new Thickness(20, 20, 20, 20),
+                HorizontalOptions = LayoutOptions.Fill,
+                VerticalOptions = LayoutOptions.Fill
+            };
+            HomePageButton.Clicked += HomePageButton_Clicked;
+            PlayerPageLayout.Children.Add(HomePageButton);
+
+            Content = PlayerPageLayout;
+        }
+
+        private async void HomePageButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new HomePage());
+        }
+
+        private async void WorkoutPageButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new WorkoutEntryPage());
+        }

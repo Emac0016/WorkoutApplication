@@ -1,0 +1,53 @@
+  StackLayout LoginLayout = new StackLayout();
+
+            //Header Label Code for the Login Page
+            LoginHeader = new Label();
+            LoginHeader.Text = "Login";
+            LoginHeader.FontAttributes = FontAttributes.Bold;
+            LoginHeader.FontSize = 35;
+            LoginHeader.Margin = new Thickness(20, 20, 20, 20);
+            LoginHeader.VerticalOptions = LayoutOptions.Start;
+            LoginHeader.HorizontalOptions = LayoutOptions.Start;
+            LoginLayout.Children.Add(LoginHeader);
+
+            //Email Text Entry Code
+            UserEmail = new Entry();
+            UserEmail.Keyboard = Keyboard.Email;
+            UserEmail.Placeholder = "Email";
+            UserEmail.Margin = new Thickness(20, 420, 20, 10);
+            UserEmail.VerticalOptions = LayoutOptions.Fill;
+            UserEmail.HorizontalOptions = LayoutOptions.FillAndExpand;
+            LoginLayout.Children.Add(UserEmail);
+
+            //Password Text Entry Code
+            UserPassword = new Entry();
+            UserPassword.Keyboard = Keyboard.Text;
+            UserPassword.Placeholder = "Password";
+            UserPassword.IsPassword = true;
+            UserPassword.Margin = new Thickness(20, 10, 20, 10);
+            UserPassword.VerticalOptions = LayoutOptions.Fill;
+            UserPassword.HorizontalOptions = LayoutOptions.FillAndExpand;
+            LoginLayout.Children.Add(UserPassword);
+
+            //Login Button Code
+            LoginButton = new Button();
+            LoginButton.Text = "Login";
+            LoginButton.Margin = new Thickness(20, 10, 20, 40);
+            LoginButton.VerticalOptions = LayoutOptions.Fill;
+            LoginButton.HorizontalOptions = LayoutOptions.FillAndExpand;
+            LoginButton.Clicked += LoginButtonClicked;
+            LoginLayout.Children.Add(LoginButton);
+
+            Content = LoginLayout;
+
+        }
+
+        private void LoginButtonClicked(object sender, EventArgs e)
+        {
+            string Email = UserEmail.Text;
+            string Password = UserPassword.Text;
+
+            await DisplayAlert("Login", "Login Successful", "Continue");
+            await Navigation.PushAsync(new HomePage());
+        }
+    }
