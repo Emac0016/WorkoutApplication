@@ -21,6 +21,7 @@
                 <Label  VerticalOptions="Center" FontAttributes="Bold" Text="Workout Summary:" TextColor="White" />
                 <Editor x:Name="WorkSum" VerticalOptions="Center" BackgroundColor="White" Placeholder="Brief Summary of Workout..." HeightRequest="300" />
                 <CheckBox x:Name="sendToCoach" VerticalOptions="Center" HorizontalOptions="Start" BackgroundColor="White"/>
+                <!-- Going to change the check box into a switch for better visuality and functionality -->
             </StackLayout>
             <StackLayout x:Name="EndContents" VerticalOptions="End">
                 <Button Text="Save" Clicked="OnSaveClicked" TextColor="Black" BackgroundColor="White" VerticalOptions="End"/>
