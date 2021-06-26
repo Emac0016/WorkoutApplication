@@ -95,8 +95,7 @@ namespace WorkoutLogSP.ViewModels
                 TimeCreated = item.Object.TimeCreated,
                 Type = item.Object.Type,
                 Sport = item.Object.Sport,
-                Description = item.Object.Description,
-                SendWorkout = item.Object.SendWorkout
+                Description = item.Object.Description
             }).Where(x => x.WorkoutCompleter == playerName).Where(x => x.Sport == sport).Where(x => x.SendWorkout == sendWorkout).ToList();
         }
 
@@ -155,7 +154,7 @@ namespace WorkoutLogSP.ViewModels
             });
         }
 
-        public async Task AddPersonalWorkout(string tm, string user, string tc, string sp, string ty, string des, string send)
+        public async Task AddPersonalWorkout(string tm, string user, string tc, string sp, string ty, string des)
         {
             await firebase.Child("Personal Workouts").PostAsync(new Workouts()
             {
@@ -165,7 +164,6 @@ namespace WorkoutLogSP.ViewModels
                 Sport = sp,
                 Type = ty,
                 Description = des,
-                SendWorkout = send
             });
         }
 
@@ -195,6 +193,7 @@ namespace WorkoutLogSP.ViewModels
             return allTeams.Where(x => x.TeamCode == tc).FirstOrDefault();
         }
 
+        //Updates the user information in Firebase
         public async Task UpdateUser(int id, string email, string name, string team, string role)
         {
             var toUpdateUser = (await firebase.Child("Users").OnceAsync<Users>()).Where(c => c.Object.ID == id).FirstOrDefault();
