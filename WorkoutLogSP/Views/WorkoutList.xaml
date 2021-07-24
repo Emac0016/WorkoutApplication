@@ -8,13 +8,7 @@
         <ListView x:Name="WorkoutList" Margin="20" ItemSelected="OnItemSelection">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell>
-                        <TextCell.Text>
-                            <MultiBindings>
-                                
-                            </MultiBindings>
-                        </TextCell.Text>
-                    </TextCell>
+                    <TextCell Text="{Binding Type}" Detail="{Binding TimeCreated}" TextColor="White" DetailColor="White"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
