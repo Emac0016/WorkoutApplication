@@ -4,14 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using WorkoutLogSP.ViewModels;
 using SQLite;
-using WorkoutLogSP.ConstantVariables;
-using WorkoutLogSP.Constants;
 using WorkoutLogSP.Database;
+using WorkoutLogSP.Constants;
 
 namespace WorkoutLogSP.Views
 {
