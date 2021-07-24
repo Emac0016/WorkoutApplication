@@ -27,7 +27,7 @@ namespace WorkoutLogSP.Views
 
             PersonalWorkoutDatabase workouts = await PersonalWorkoutDatabase.Instance;
 
-            WorkoutList.ItemsSource = await workouts.GetItemsAsync(UserSettings.ID);
+            WorkoutList.ItemsSource = await workouts.GetItemsAsync();
             
 
         }

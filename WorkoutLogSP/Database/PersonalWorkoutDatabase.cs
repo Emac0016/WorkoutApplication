@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using WorkoutLogSP.Database;
+using WorkoutLogSP.ConstantVariables;
 using WorkoutLogSP.ViewModels;
 
 namespace WorkoutLogSP.Database
@@ -24,9 +24,7 @@ namespace WorkoutLogSP.Database
             Database = new SQLiteAsyncConnection(SQLFunctionality.DatabasePath, SQLFunctionality.Flags);
         }
 
-        public Task<List<Workouts>> GetItemsAsync(string uc)
         {
-            return Database.Table<Workouts>().Where(i => i.UserComp == uc).ToListAsync();
         }
 
         public Task<List<Workouts>> GetItemsNotDoneAsync()

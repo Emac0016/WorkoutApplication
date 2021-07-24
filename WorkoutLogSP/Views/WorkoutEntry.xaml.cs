@@ -10,6 +10,7 @@ using WorkoutLogSP.ViewModels;
 using SQLite;
 using WorkoutLogSP.Database;
 using WorkoutLogSP.Constants;
+using WorkoutLogSP.Database;
 
 namespace WorkoutLogSP.Views
 {

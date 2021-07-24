@@ -17,12 +17,11 @@
         <ListView x:Name="WorkoutList" Margin="20" ItemSelected="OnItemSelection">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Detail="{Binding TimeCreated}" TextColor="White" DetailColor="White">
+                    <TextCell>
                         <TextCell.Text>
-                            <MultiBinding Converter="{StaticResource WorkoutMultibindingConverter}">
-                                <Binding Path="ID"/>
-                                <Binding Path="Type"/>
-                            </MultiBinding>
+                            <MultiBindings>
+                                
+                            </MultiBindings>
                         </TextCell.Text>
                     </TextCell>
                 </DataTemplate>
