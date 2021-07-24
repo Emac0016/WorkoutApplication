@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,6 +7,8 @@ namespace WorkoutLogSP.ViewModels
 {
     public class Workouts
     {
+        [PrimaryKey, AutoIncrement]
+        public int ID { get; set; }
         public string UserComp { get; set; }
         public string WorkoutCompleter { get; set; }
         public string TimeCreated { get; set; }
