@@ -13,7 +13,7 @@ namespace WorkoutLogSP.ConstantVariables
 
 
         //Controls functionality of the read and write function of the database
-        public const SQLite.SQLiteOpenFlags Flags = SQLite.SQLiteOpenFlags.ReadWrite | SQLite.SQLiteOpenFlags.Create | SQLite.SQLiteOpenFlags.SharedCache;
+        public const SQLite.SQLiteOpenFlags Flags = SQLite.SQLiteOpenFlags.ReadWrite | SQLite.SQLiteOpenFlags.Create | SQLite.SQLiteOpenFlags.SharedCache | SQLite.SQLiteOpenFlags.ProtectionCompleteUntilFirstUserAuthentication;
 
         public static string DatabasePath
         {

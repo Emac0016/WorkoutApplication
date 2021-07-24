@@ -11,6 +11,7 @@ using WorkoutLogSP.ViewModels;
 using SQLite;
 using WorkoutLogSP.ConstantVariables;
 using WorkoutLogSP.Constants;
+using WorkoutLogSP.Database;
 
 namespace WorkoutLogSP.Views
 {
@@ -89,18 +90,14 @@ namespace WorkoutLogSP.Views
 
             }
 
-            await SaveWorkout(personalWorkout);
+            PersonalWorkoutDatabase database = await PersonalWorkoutDatabase.Instance;
+            await database.SaveItemAsync(personalWorkout);
+
+            // Navigate backwards
+            await Navigation.PopAsync();
 
         }
 
-        //Code to save the workout to the device
-        public Task<int> SaveWorkout(Workouts workout)
-        {
-            if (Convert.ToInt32(workout.UserComp) == 0)
-                return WorkoutDatabase.InsertAsync(workout);
-            else
-                return WorkoutDatabase.UpdateAsync(workout);
-        }
 
     }
 
