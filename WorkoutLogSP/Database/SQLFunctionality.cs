@@ -4,9 +4,9 @@ using System.IO;
 using System.Text;
 using WorkoutLogSP.ViewModels;
 
-namespace WorkoutLogSP.ConstantVariables
+namespace WorkoutLogSP.Database
 {
-    class SQLFunctionality
+    public class SQLFunctionality
     {
         //Sets the db file to the current users name + PersonalWorkouts
         public static string databaseFile = UserSettings.Name + "PersonalWorkouts.db3";
