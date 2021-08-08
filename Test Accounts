@@ -1,0 +1,13 @@
+Test player 1 account information: 
+  Email = testplayer@test.com; 
+  Password = testplayer;
+
+Test player 2 account information:
+  Email = testplayer2@test.com
+  Password = testplayer2
+
+Test coach account information: 
+  Email = testcoach@test.com;
+  Password = testcoach;
+
+Use these accounts to login to the application. These accounts are both linked to the same team. Use these to test all things that have to do with workout functionality of the application.
