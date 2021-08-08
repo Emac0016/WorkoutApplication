@@ -4,16 +4,16 @@ using System.IO;
 using System.Text;
 using WorkoutLogSP.ViewModels;
 
-namespace WorkoutLogSP.ConstantVariables
+namespace WorkoutLogSP.Database
 {
-    class SQLFunctionality
+    public class SQLFunctionality
     {
         //Sets the db file to the current users name + PersonalWorkouts
         public static string databaseFile = UserSettings.Name + "PersonalWorkouts.db3";
 
 
         //Controls functionality of the read and write function of the database
-        public const SQLite.SQLiteOpenFlags Flags = SQLite.SQLiteOpenFlags.ReadWrite | SQLite.SQLiteOpenFlags.Create | SQLite.SQLiteOpenFlags.SharedCache;
+        public const SQLite.SQLiteOpenFlags Flags = SQLite.SQLiteOpenFlags.ReadWrite | SQLite.SQLiteOpenFlags.Create | SQLite.SQLiteOpenFlags.SharedCache | SQLite.SQLiteOpenFlags.ProtectionCompleteUntilFirstUserAuthentication;
 
         public static string DatabasePath
         {
