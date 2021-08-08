@@ -63,8 +63,8 @@ namespace WorkoutLogSP.Views
             };
         }
 
-
-        void OnPageSelected(Object sender, SelectedItemChangedEventArgs e)
+        
+        async void OnPageSelected(Object sender, SelectedItemChangedEventArgs e)
         {
             var item = (DashboardMenu)e.SelectedItem;
 
@@ -75,16 +75,16 @@ namespace WorkoutLogSP.Views
                 Preferences.Remove("FirebaseRefreshToken");
 
                 UserSettings.ClearAllData();
-
+                
 
                 Detail = new NavigationPage((Page)(new NavigationPage(new LoginPage())));
 
                 IsPresented = false;
 
             }
+            
 
-
-            else
+            else 
             {
                 Detail = new NavigationPage((Page)Activator.CreateInstance(page));
 
