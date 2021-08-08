@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WorkoutLogSP.Database;
 using WorkoutLogSP.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -22,20 +21,13 @@ namespace WorkoutLogSP.Views
 
         async void OnDeleteClicked(Object sender, EventArgs e)
         {
+            string userComp = UserSettings.ID;
 
-            var workout = (Workouts)BindingContext;
-            PersonalWorkoutDatabase database = await PersonalWorkoutDatabase.Instance;
-            await database.DeleteItemAsync(workout);
+            string time = timeCreated.Text.ToString();
+
+            await firebseHelper.DeletePersonalWorkout(userComp, time);
+
             await Navigation.PopAsync();
-
-
-            //string userComp = UserSettings.ID;
-
-            //string time = timeCreated.Text.ToString();
-
-            //await firebseHelper.DeletePersonalWorkout(userComp, time);
-
-            //await Navigation.PopAsync();
         }
     }
 }

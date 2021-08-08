@@ -60,7 +60,6 @@ namespace WorkoutLogSP.ViewModels
         {
             return (await firebase.Child("Personal Workouts").OnceAsync<Workouts>()).Select(item => new Workouts
             {
-                ID = item.Object.ID,
                 UserComp = item.Object.UserComp,
                 WorkoutCompleter = item.Object.WorkoutCompleter,
                 TimeCreated = item.Object.TimeCreated,
@@ -155,11 +154,10 @@ namespace WorkoutLogSP.ViewModels
             });
         }
 
-        public async Task AddPersonalWorkout(int id, string tm, string user, string tc, string sp, string ty, string des)
+        public async Task AddPersonalWorkout(string tm, string user, string tc, string sp, string ty, string des)
         {
             await firebase.Child("Personal Workouts").PostAsync(new Workouts()
             {
-                ID = id,
                 UserComp = tm,
                 WorkoutCompleter = user,
                 TimeCreated = tc,

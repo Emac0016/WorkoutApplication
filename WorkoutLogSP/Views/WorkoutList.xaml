@@ -1,30 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:WorkoutLogSP"
              x:Class="WorkoutLogSP.Views.WorkoutListPage"
-             xmlns:converter="clr-namespace:WorkoutLogSP.MultiBinding"
              Title="Personal Workouts"
              BackgroundColor="Black">
-    
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <converter:WorkoutMultibindingConverter x:Key="WorkoutMultibindingConverter"/>
-        </ResourceDictionary>
-    </ContentPage.Resources>
-
     <StackLayout>
         <ListView x:Name="WorkoutList" Margin="20" ItemSelected="OnItemSelection">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Detail="{Binding TimeCreated}" TextColor="White" DetailColor="White">
-                        <TextCell.Text>
-                            <MultiBinding Converter="{StaticResource WorkoutMultibindingConverter}">
-                                <Binding Path="ID"/>
-                                <Binding Path="Type"/>
-                            </MultiBinding>
-                        </TextCell.Text>
-                    </TextCell>
+                    <TextCell Text="{Binding Description}" Detail="{Binding CurrTime}" TextColor="White" DetailColor="White"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

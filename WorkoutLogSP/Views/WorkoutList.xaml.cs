@@ -4,7 +4,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WorkoutLogSP.Database;
 using WorkoutLogSP.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -25,9 +24,9 @@ namespace WorkoutLogSP.Views
         {
             base.OnAppearing();
 
-            PersonalWorkoutDatabase workouts = await PersonalWorkoutDatabase.Instance;
+            var workouts = await firebaseHelper.GetPersonalWorkouts(UserSettings.ID);
 
-            WorkoutList.ItemsSource = await workouts.GetItemsAsync(UserSettings.ID);
+            WorkoutList.ItemsSource = workouts;
             
 
         }

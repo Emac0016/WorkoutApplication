@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using WorkoutLogSP.ViewModels;
 using SQLite;
-using WorkoutLogSP.Database;
+using WorkoutLogSP.ConstantVariables;
 using WorkoutLogSP.Constants;
 
 namespace WorkoutLogSP.Views
@@ -88,14 +89,18 @@ namespace WorkoutLogSP.Views
 
             }
 
-            PersonalWorkoutDatabase database = await PersonalWorkoutDatabase.Instance;
-            await database.SaveItemAsync(personalWorkout);
-
-            // Navigate backwards
-            await Navigation.PopAsync();
+            await SaveWorkout(personalWorkout);
 
         }
 
+        //Code to save the workout to the device
+        public Task<int> SaveWorkout(Workouts workout)
+        {
+            if (Convert.ToInt32(workout.UserComp) == 0)
+                return WorkoutDatabase.InsertAsync(workout);
+            else
+                return WorkoutDatabase.UpdateAsync(workout);
+        }
 
     }
 

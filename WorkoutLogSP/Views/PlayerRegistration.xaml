@@ -6,7 +6,6 @@
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
-            <!-- Whatever you want. Comment. Say, say whatever. Cool-->
             <Label x:Name="playerName" Text="Name: " TextColor="White"/>
             <Entry x:Name="pName" Placeholder="First Last" BackgroundColor="White"/>
             <Label x:Name="teamName" Text="Team Name: " TextColor="White"/>
