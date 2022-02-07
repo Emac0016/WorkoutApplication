@@ -6,6 +6,7 @@
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout Orientation="Vertical" Margin="10,0,10,0" VerticalOptions="CenterAndExpand">
+            <Image Source="LoginPageImage.png" Margin="0,0,10,0"/>
             <Entry Placeholder="Email" x:Name="EmailLoginEntry" BackgroundColor="White" VerticalOptions="Center"/>
             <Entry Placeholder="Password" BackgroundColor="White" IsPassword ="True" x:Name="PasswordLoginEntry" VerticalOptions="Center"/>
             <Button Text="Login" BackgroundColor="White" TextColor="Black" Clicked="LoginClicked" VerticalOptions="Center"/>
