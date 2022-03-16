@@ -11,5 +11,7 @@ namespace WorkoutLogSP.ViewModels
         public string Sport { get; set; }
         public string Type { get; set; }
         public string Description { get; set; }
+
+        public DateTime WorkoutSession { get; set; }
     }
 }
